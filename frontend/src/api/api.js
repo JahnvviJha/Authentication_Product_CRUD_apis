@@ -2,10 +2,11 @@
 const BASE_URL = "https://authentication-product-crud-apis-us4u.onrender.com/api";
 
 async function request(path, options = {}) {
+  const { headers, ...restOptions } = options;
   const res = await fetch(`${BASE_URL}${path}`, {
-    headers: { "Content-Type": "application/json", ...options.headers },
+    headers: { "Content-Type": "application/json", ...headers },
     credentials: "include", // browser needs this to send the httpOnly cookie
-    ...options,
+    ...restOptions,
   });
 
   const data = await res.json();
