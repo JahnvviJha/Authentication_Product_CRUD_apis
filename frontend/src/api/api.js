@@ -1,5 +1,5 @@
-// all requests go to the backend at port 5000
-const BASE_URL = "http://localhost:5000/api";
+// all requests go to the live backend
+const BASE_URL = "https://authentication-product-crud-apis-us4u.onrender.com/api";
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE_URL}${path}`, {

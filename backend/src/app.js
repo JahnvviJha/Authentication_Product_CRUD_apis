@@ -8,7 +8,7 @@ const productRoutes = require("./routes/product.routes");
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173", // Vite dev server
+  origin: true, // allows the live Vercel frontend to connect
   credentials: true,              // allow cookies to be sent
 }));
 app.use(express.json());
